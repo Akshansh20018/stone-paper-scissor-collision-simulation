@@ -2,6 +2,9 @@ import math
 from config import ELEMENT_RADIUS
 
 def check_collision(elem1, elem2):
+    if(elem1.type==elem2.type):
+        return False
+
     distance = math.sqrt((elem1.x - elem2.x)**2 + (elem1.y - elem2.y)**2)
     return distance <= 2 * ELEMENT_RADIUS
 
