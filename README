@@ -6,6 +6,7 @@ Possible avenues to expand:
     Multiplayer and Interaction
         User intervention: Allow players to add or remove elements during the simulation.
         Multiplayer mode: Create a version where multiple players can compete by influencing their own set of elements.
+        Vs Mode: Player plays a classic game with the computer and if they win 10 copies of their element is added to the game and losers 10 are subtracted 
 
     Different Modes:
         Orbs mode: Create a version with orbs, where some might have shield and spear
