@@ -3,7 +3,7 @@ WINDOW_HEIGHT = 800
 FPS = 60
 
 ELEMENT_COUNT = 99
-ELEMENT_RADIUS = 5
+ELEMENT_RADIUS = 15
 
 IMAGE_FILE = {
     'rock': f"resources\\rock.svg",
