@@ -2,12 +2,19 @@ import pygame
 from simulation import Simulation
 from config import WINDOW_WIDTH, WINDOW_HEIGHT, FPS
 
+choice_map = {
+    1: "rock",
+    2: "paper",
+    3: "scissors"
+}
+
 def reinforcement_choice():
     print("Select the element you would want to reinforce")
     print("1. Rock")
     print("2. Paper")
     print("3. Scissors")
-    return int(input("Enter your choice: "))
+    choice = int(input("Enter your choice: "))
+    return choice_map[choice]
 
 def main():
     choice = reinforcement_choice()
@@ -20,10 +27,23 @@ def main():
     simulation = Simulation()
 
     running = True
+    ability_remaining = 1
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    print("Attempted to use the ability")
+                    if ability_remaining>0 and simulation.counts[choice]>0:
+                        simulation.send_reinforcements(choice)
+                        ability_remaining-= 1
+                        print("Ability used successfully.")
+                        print(f"{ability_remaining} remaining for this round")
+                    elif ability_remaining>0:
+                        print("Too late to use this ability, as no elements of this type remain")
+                    else:
+                        print("Ability already used previously this round")
 
         simulation.update()
 
