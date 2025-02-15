@@ -21,10 +21,15 @@ def main():
 
         screen.fill((0, 0, 0))
         simulation.draw(screen)
+        simulation.draw_counter(screen)
         pygame.display.flip()
 
+        if simulation.check_termination():
+            print("Simulation ended successfully")
+            running= False
         clock.tick(FPS)
 
+    pygame.time.wait(10000)
     pygame.quit()
 
 if __name__ == "__main__":

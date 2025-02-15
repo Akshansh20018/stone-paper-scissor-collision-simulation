@@ -41,3 +41,20 @@ class Simulation:
     def draw(self, screen):
         for element in self.elements:
             element.draw(screen)
+
+    def count_elements(self):
+        counts= {'rock': 0, 'paper': 0, 'scissors':0}
+        for element in self.elements:
+            counts[element.type] += 1
+        return counts
+
+    def draw_counter(self, screen):
+        font = pygame.font.Font(None, 36)
+        counts = self.count_elements()
+        text = f"Rock: {counts['rock']}  Paper: {counts['paper']}  Scissors: {counts['scissors']}"
+        text_surface = font.render(text, True, (255, 255, 255))
+        screen.blit(text_surface, (10, 10))
+
+    def check_termination(self):
+        counts = self.count_elements()
+        return len([count for count in counts.values() if count > 0]) == 1
