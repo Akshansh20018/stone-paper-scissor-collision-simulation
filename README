@@ -1,0 +1,11 @@
+Possible avenues to expand:
+    AI and Machine Learning
+        Smart elements: Implement basic AI for elements to make strategic decisions.
+        Learning algorithms: Use machine learning to evolve element behavior over multiple simulations.
+
+    Multiplayer and Interaction
+        User intervention: Allow players to add or remove elements during the simulation.
+        Multiplayer mode: Create a version where multiple players can compete by influencing their own set of elements.
+
+    Different Modes:
+        Orbs mode: Create a version with orbs, where some might have shield and spear

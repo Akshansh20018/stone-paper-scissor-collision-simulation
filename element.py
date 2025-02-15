@@ -31,7 +31,7 @@ class Element:
         if (self.type == 'rock' and other.type == 'scissors') or \
            (self.type == 'scissors' and other.type == 'paper') or \
            (self.type == 'paper' and other.type == 'rock'):
-            # update the other object
+
             other.type = self.type
             other.update_image()
         else:
