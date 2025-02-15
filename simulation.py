@@ -8,6 +8,7 @@ pygame.init()
 class Simulation:
     def __init__(self):
         self.elements = []
+        self.counts= {'rock': 0, 'paper': 0, 'scissors':0}
         self.initialize_elements()
 
     def initialize_elements(self):
@@ -50,11 +51,21 @@ class Simulation:
 
     def draw_counter(self, screen):
         font = pygame.font.Font(None, 36)
-        counts = self.count_elements()
-        text = f"Rock: {counts['rock']}  Paper: {counts['paper']}  Scissors: {counts['scissors']}"
+        self.counts = self.count_elements()
+        text = f"Rock: {self.counts['rock']}  Paper: {self.counts['paper']}  Scissors: {self.counts['scissors']}"
         text_surface = font.render(text, True, (255, 255, 255))
         screen.blit(text_surface, (10, 10))
 
     def check_termination(self):
         counts = self.count_elements()
         return len([count for count in counts.values() if count > 0]) == 1
+    
+    def send_reinforcements(self, element_type):
+        corner = (50, WINDOW_HEIGHT - 150)  # Bottom-left corner
+        for _ in range(10):
+            x = random.randint(corner[0], corner[0] + 100)
+            y = random.randint(corner[1], corner[1] + 100)
+            vx = random.uniform(-1, 1)
+            vy = random.uniform(-1, 1)
+            new_element = Element(element_type, x, y, vx, vy)
+            self.elements.append(new_element)
