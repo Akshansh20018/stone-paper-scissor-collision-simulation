@@ -2,7 +2,15 @@ import pygame
 from simulation import Simulation
 from config import WINDOW_WIDTH, WINDOW_HEIGHT, FPS
 
+def reinforcement_choice():
+    print("Select the element you would want to reinforce")
+    print("1. Rock")
+    print("2. Paper")
+    print("3. Scissors")
+    return int(input("Enter your choice: "))
+
 def main():
+    choice = reinforcement_choice()
     pygame.init()
     print("Starting the display...")
     screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
