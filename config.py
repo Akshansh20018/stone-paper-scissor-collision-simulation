@@ -5,8 +5,14 @@ FPS = 60
 ELEMENT_COUNT = 99
 ELEMENT_RADIUS = 5
 
-COLORS = {
-    'rock': (128, 128, 128),  # Gray
-    'paper': (255, 255, 255),  # White
-    'scissors': (255, 0, 0)    # Red
+IMAGE_FILE = {
+    'rock': f"resources\\rock.svg",
+    'paper': f"resources\\paper-resized.jpeg",
+    'scissors': f"resources\\scissors.svg"
 }
+
+ELEMENT_SIZE = {
+    'rock': [225, 225],
+    'paper': [30, 40],
+    'scissors': [69, 69]
+    }
